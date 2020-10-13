@@ -12,7 +12,7 @@ function createWindow() {
   });
 
   // и загружаем index.html в приложении.
-  win.loadFile(__dirname + `./src/index.html`);
+  win.loadFile(`index.html`);
 
   // Отображаем средства разработчика.
   win.webContents.openDevTools();  

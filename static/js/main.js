@@ -1,3 +1,5 @@
+const tmi = require('tmi.js');
+
 const form = document.getElementById("searchForm");
 
 form.addEventListener("submit", function (e) {
@@ -19,16 +21,16 @@ form.addEventListener("submit", function (e) {
   client.on("message", (channel, tags, message, self) => {
     const chatMessage = document.createElement("p");
     const chatMessageText = document.createTextNode(`${tags.username}: ` + message);
-    const lastChatMessage = chat.lastElementChild;
-
-    lastChatMessage.scrollIntoView();
-
+    
     chatMessage.appendChild(chatMessageText);
     chat.appendChild(chatMessage);
     
+    const lastChatMessage = chat.lastElementChild;
+    lastChatMessage.scrollIntoView();
+    
     console.log(chat.children.length);
 
-    if (chat.children.length > 100) {
+    if (chat.children.length >= 100) {
       let child = chat.firstElementChild;
       for (let i = 0; i < 20; i++) {
         chat.removeChild(child);
