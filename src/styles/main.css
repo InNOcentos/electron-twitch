@@ -1,0 +1,16 @@
+.search_form {
+  display: flex;
+  flex-direction: column;
+}
+.search_input {
+  padding: 5px 10px;
+}
+.submit_button {
+  margin-top: 15px;
+  width: 100px;
+  height: 20px;
+}
+.chat p {
+  overflow: auto;
+  color: #000;
+}
